@@ -1,6 +1,27 @@
 # README
 This is an automatic full segmentation  tool based on [Segment-Anything-2](https://github.com/facebookresearch/segment-anything-2) and [Segment-Anything-1](https://github.com/zrporz/segment-anything-1). Our tool performs automatic full segmentation of the video, enabling the tracking of each object and the detection of possible new objects.
 
+```bash
+sudo apt-get update && sudo apt-get install cbm git-lfs ffmpeg
+git clone https://github.com/svjack/AutoSeg-SAM2 --recursive
+cd AutoSeg-SAM2
+
+### install sam1 and sam2 modules
+pip install -e submodule/segment-anything-1
+pip install -e submodule/segment-anything-2
+pip install opencv-python loguru "imageio[ffmpeg]"
+### download checkpoints
+cd checkpoints/sam1
+bash download.sh
+cd ../sam2
+bash download.sh
+
+cd ../../
+unzip chickenchicken.zip
+cp -r n/holylfs05/LABS/pfister_lab/Lab/coxfs01/pfister_lab2/Lab/zhourenping/workspace/AutoSeg-SAM2/videos videos
+
+bash scripts/chickenchicken.sh
+```
 
 ## Demo
 
